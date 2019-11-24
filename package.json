@@ -4,7 +4,7 @@
   "description": "frontend para app note-do con API REST",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "vue": "^2.5.2"
   },
   "devDependencies": {
+    "nodemon": "^1.19.2",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
