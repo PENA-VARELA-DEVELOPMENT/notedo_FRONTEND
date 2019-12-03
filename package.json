@@ -4,7 +4,9 @@
   "description": "frontend para app note-do con API REST",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js"
+    "nodemon": "nodemon ./src/index.js",
+    "webpack": "webpack --mode development --watch",
+    "start": "concurrently \"npm:nodemon\" \"npm:webpack\""
   },
   "repository": {
     "type": "git",
@@ -22,11 +24,11 @@
   },
   "homepage": "https://github.com/PENA-VARELA-DEVELOPMENT/notedo_FRONTEND#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "express": "^4.17.1",
     "vue": "^2.5.2"
   },
   "devDependencies": {
-    "nodemon": "^1.19.2",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -36,18 +38,23 @@
     "babel-plugin-transform-vue-jsx": "^3.5.0",
     "babel-preset-env": "^1.3.2",
     "babel-preset-stage-2": "^6.22.0",
+    "concurrently": "^5.0.0",
     "copy-webpack-plugin": "^4.0.1",
+    "cors": "^2.8.5",
     "css-loader": "^3.2.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "uglifyjs-webpack-plugin": "^1.1.1",
-    "vue-loader": "^13.3.0",
+    "vue-loader": "^15.7.2",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.5.2",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
     "webpack-merge": "^4.1.0"
   }
 }
