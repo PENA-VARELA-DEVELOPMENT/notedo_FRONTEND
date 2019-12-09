@@ -18,9 +18,14 @@ Vue.use(VueAxios, axios);
 import App from './App.vue';
 import navVar from './components/navVar.vue'
 import card from './components/note.vue';
+import newUser from './components/newUser.vue';
+import login from './components/login.vue';
 
 Vue.component('note-card', card);
-Vue.component('notedo-nv', navVar)
+Vue.component('notedo-nv', navVar);
+Vue.component('newUser', newUser);
+Vue.component('login', login);
+
 
 
 new Vue({

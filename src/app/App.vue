@@ -1,6 +1,11 @@
 <template>
   <div>
     <notedo-nv> </notedo-nv>
+    
+    <!--
+    <newUser></newUser>
+    <login> </login>
+    -->
 
     <!-- <b-container>
       <b-row>
