@@ -5,7 +5,6 @@
         <div>
         <b-card
             title="Mis tareas"
-            style="max-width: 25%;"
             class="mb-2 "
             >
             <b-card-text>
