@@ -4,13 +4,13 @@ const path = require("path");
 const bodyParser = require('body-parser')
 const morgan = require("morgan");
 const cors = require("cors");
-const app = express();
 
+
+
+const app = express();
 // settings
 
 // Middlewares
-
-
 
 app.use(bodyParser.json());
 app.use(morgan('dev'));

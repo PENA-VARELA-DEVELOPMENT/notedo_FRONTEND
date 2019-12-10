@@ -25,8 +25,10 @@ Vue.config.productionTip = false
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 Vue.use(VueAxios, axios);
+axios.defaults.baseURL = 'http://c1fe4917.ngrok.io';
 
 // importar componentes de Vue
+import Master from './layout/master.vue'
 import App from './App.vue';
 import navVar from './components/navVar.vue'
 import card from './components/note.vue';
@@ -44,6 +46,22 @@ Vue.component('todo-item', todoItem);
 
 
 
+const routes = [
+    {
+        path: '/',
+        component: App
+    },
+    {
+        path: '/notes',
+        component: card
+    },
+];
+
+const router = new VueRouter({ routes });
 new Vue({
-    render: h => h(App)
-}).$mount('#app');
+    el: '#app',
+    router: router,
+    render: h => h(Master)
+})
+
+
