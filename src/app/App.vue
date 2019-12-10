@@ -1,7 +1,7 @@
 <template>
   <div>
     <notedo-nv> </notedo-nv>
-    
+    <list-todo></list-todo>
     <!--
     <newUser></newUser>
     <login> </login>
