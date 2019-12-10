@@ -1,7 +1,25 @@
 <template>
   <div>
     <notedo-nv> </notedo-nv>
-    <note-card></note-card>
+    <list-todo></list-todo>
+    <!--
+    <newUser></newUser>
+    <login> </login>
+    -->
+
+    <!-- <b-container>
+      <b-row>
+        <b-col>
+          <note-card> </note-card>
+        </b-col>
+        <b-col>
+          <note-card> </note-card>
+        </b-col>
+        <b-col>
+          <note-card> </note-card>
+        </b-col>
+      </b-row>
+    </b-container> -->
   </div>
 </template>
 
