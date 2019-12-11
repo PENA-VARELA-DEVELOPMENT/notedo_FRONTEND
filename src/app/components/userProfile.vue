@@ -32,7 +32,7 @@
                     </b-form-group>
                 </b-form>  
 
-                <label style="font-weight: bold; color: #1a9cd7" >Cambiar Contraseña</label>
+                <label style="font-weight: bold; color: #1a9cd7" >Cambiar contraseña</label>
                 <!-- Password -->
                 <b-form-group
                   id="input-group-3"
