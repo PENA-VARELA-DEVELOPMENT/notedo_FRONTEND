@@ -1,16 +1,9 @@
 <template>
   <!-- Form-->
-  <div>
-    <b-card
-      no-body
-      class="overflow-hidden"
-      style="max-width: 100%; max-height:100%, horizontal-aligment:center"
-    >
+  <b-container style=" max-width: 100%; max-height:100%; background: rgb(151,80,201); background: linear-gradient(0deg, rgba(151,80,201,1) 0%, rgba(124,180,206,1) 100%);">
+    <b-col style="display: flex; justify-content: center; align-items: center;">
       <b-row no-gutters>
-        <b-col md="6">
-          <b-card-img src="/images/registro.jpg" class="rounded-0"></b-card-img>
-        </b-col>
-        <b-col md="6">
+        <b-card class="overflow-hidden" style="margin:1rem; border-radius: 1rem; horizontal-aligment:center">
           <b-card-body title="Bienvenido(a) a notedo">
             <b-card-text>
               <!-- Email -->
@@ -19,7 +12,7 @@
                   id="input-group-1"
                   label="Correo electrónico:"
                   label-for="input-1"
-                >
+                  >
                   <b-form-input
                     id="input-1"
                     v-model="form.email"
@@ -31,31 +24,29 @@
 
                 <!-- Password -->
                 <b-form-group
-                  id="input-group-3"
-                  label="Contraseña:"
-                  label-for="input-3"
-                  description="Para mayor seguridad tu contraseña debe ser mayor a 8 caracteres"
+                    id="input-group-3"
+                    label="Contraseña:"
+                    label-for="input-3"
+                    description="Para mayor seguridad tu contraseña debe ser mayor a 8 caracteres"
                 >
-                  <b-form-input
+                    <b-form-input
                     id="input-3"
                     v-model="form.password"
                     type="password"
                     required
                     placeholder="***"
-                  ></b-form-input>
+                    ></b-form-input>
                 </b-form-group>
 
-                <b-button type="submit" variant="primary"
-                  >Iniciar sesión</b-button
-                >
-                <b-button type="reset" variant="danger">Cancelar</b-button>
+                <b-button type="submit" variant="primary" style="color: #ffffff; background-color:#1a9cd7;">Registrarse</b-button>
+                <b-button type="reset"  variant="primary" style="color: #ffffff; background-color:#1c5b78;" >Cancelar</b-button>
               </b-form>
             </b-card-text>
-          </b-card-body>
-        </b-col>
-      </b-row>
-    </b-card>
-  </div>
+          </b-card-body>   
+        </b-card> 
+      </b-row> 
+    </b-col>
+  </b-container>
 </template>
 
 <script>

@@ -1,10 +1,13 @@
 <template>
   <div>
     <notedo-nv> </notedo-nv>
-    <list-todo></list-todo>
+    <resetPassword> </resetPassword>
+    
     <!--
-    <newUser></newUser>
+    <list-todo></list-todo>
     <login> </login>
+    <newUser></newUser>
+    <forgotPassword> </forgotPassword>
     -->
 
     <!-- <b-container>
