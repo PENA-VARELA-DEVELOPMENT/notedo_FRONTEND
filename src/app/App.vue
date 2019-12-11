@@ -1,7 +1,7 @@
 <template>
   <div>
     <notedo-nv> </notedo-nv>
-    <resetPassword> </resetPassword>
+    <userProfile> </userProfile>
     
     <!--
     <list-todo></list-todo>

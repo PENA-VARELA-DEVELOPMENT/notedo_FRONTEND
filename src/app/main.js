@@ -12,9 +12,11 @@ Vue.use(BootstrapVue);
 // importar los iconos de fontawsome para vue 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faTimesCircle)
+library.add(faTimesCircle);
+library.add(faUserCircle);
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -38,6 +40,7 @@ import listTodo from './components/list-todo.vue';
 import todoItem from './components/todo-item.vue';
 import forgotPass from './components/forgotPassword.vue';
 import resetPass from './components/resetPassword.vue';
+import userProfile from './components/userProfile.vue';
 
 Vue.component('note-card', card);
 Vue.component('notedo-nv', navVar);
@@ -47,6 +50,8 @@ Vue.component('listTodo', listTodo);
 Vue.component('todo-item', todoItem);
 Vue.component( 'forgotPassword', forgotPass);
 Vue.component( 'resetPassword', resetPass);
+Vue.component('userProfile', userProfile);
+
 
 
 
