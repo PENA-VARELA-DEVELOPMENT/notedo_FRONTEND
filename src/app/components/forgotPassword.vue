@@ -4,13 +4,13 @@
     <b-col style="display: flex; justify-content: center; align-items: center;">
       <b-row no-gutters>
         <b-card class="overflow-hidden" style="margin:1rem; border-radius: 1rem; horizontal-aligment:center">
-          <b-card-body title="Bienvenido(a) a notedo">
+          <b-card-body title="¿Olvidaste tu contraseña?">
             <b-card-text>
               <!-- Email -->
               <b-form @submit="onSubmit" @reset="onReset" v-if="show">
                 <b-form-group
                   id="input-group-1"
-                  label="Correo electrónico:"
+                  label="Ingresa tu correo electrónico para poder reestablecerla:"
                   label-for="input-1"
                   >
                   <b-form-input
@@ -22,27 +22,13 @@
                   ></b-form-input>
                 </b-form-group>
 
-                <!-- Password -->
-                <b-form-group
-                    id="input-group-3"
-                    label="Contraseña:"
-                    label-for="input-3"
-                    description="Para mayor seguridad tu contraseña debe ser mayor a 8 caracteres"
-                >
-                    <b-form-input
-                    id="input-3"
-                    v-model="form.password"
-                    type="password"
-                    required
-                    placeholder="***"
-                    ></b-form-input>
-                </b-form-group>
-
-                <b-button type="submit" variant="primary" style="color: #ffffff; background-color:#1a9cd7;">Registrarse</b-button>
-                <b-button type="reset"  variant="primary" style="color: #ffffff; background-color:#1c5b78;" >Cancelar</b-button>
+                <b-button type="submit" variant="primary" style="color: #ffffff; background-color:#1a9cd7;">Reestablecer contraseña</b-button>
               </b-form>
             </b-card-text>
-          </b-card-body>   
+            
+            <b-link href="#" style=" position: absolute; color: #1a9cd7;">Volver al inicio</b-link>
+          </b-card-body>
+             
         </b-card> 
       </b-row> 
     </b-col>
