@@ -1,7 +1,7 @@
 // importar Vue
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-Vue.use(VueRouter)
+import router from './router';
+
 
 // Vue cookies
 import VueCookies from 'vue-cookies'
@@ -60,27 +60,6 @@ Vue.component( 'forgotPassword', forgotPass);
 Vue.component( 'resetPassword', resetPass);
 
 
-
-const routes = [
-    {
-        path: '/',
-        component: App
-    },
-    {
-        path: '/notes',
-        component: card
-    },
-    {
-        path: '/login',
-        component: login
-    },
-    {
-        path: '/register',
-        component: newUser
-    }
-];
-
-const router = new VueRouter({ routes });
 new Vue({
     el: '#app',
     router: router,

@@ -1,28 +1,6 @@
 <template>
   <div>
-    <notedo-nv> </notedo-nv>
-    <resetPassword> </resetPassword>
-    
-    <!--
-    <list-todo></list-todo>
-    <login> </login>
-    <newUser></newUser>
-    <forgotPassword> </forgotPassword>
-    -->
-
-    <!-- <b-container>
-      <b-row>
-        <b-col>
-          <note-card> </note-card>
-        </b-col>
-        <b-col>
-          <note-card> </note-card>
-        </b-col>
-        <b-col>
-          <note-card> </note-card>
-        </b-col>
-      </b-row>
-    </b-container> -->
+    <login></login>
   </div>
 </template>
 
