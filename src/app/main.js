@@ -55,6 +55,14 @@ const routes = [
         path: '/notes',
         component: card
     },
+    {
+        path: '/login',
+        component: login
+    },
+    {
+        path: '/register',
+        component: newUser
+    }
 ];
 
 const router = new VueRouter({ routes });

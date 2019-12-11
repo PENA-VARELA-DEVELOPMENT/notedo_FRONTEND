@@ -2,6 +2,7 @@
     <!-- Form-->
     <div> 
         <b-card no-body class="overflow-hidden" style="max-width: 100%; max-height:100%, horizontal-aligment:center">
+            
             <b-row no-gutters>
             <b-col md="6">
                 <b-card-img src="/images/registro.jpg" class="rounded-0"></b-card-img>
