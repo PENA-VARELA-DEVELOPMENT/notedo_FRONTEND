@@ -35,9 +35,9 @@ export default {
     },
     methods: {
         test(){
-          this.axios.get('/note')
-          .then(res => console.log(res.response))
-          .catch(e => console.log(e.response))  
+          // this.axios.get('/note')
+          // .then(res => console.log(res.response))
+          // .catch(e => console.log(e.response))  
         }
     }
 }

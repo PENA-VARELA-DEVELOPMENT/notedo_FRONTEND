@@ -3,6 +3,17 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter)
 
+// Vue cookies
+import VueCookies from 'vue-cookies'
+
+// set default config
+VueCookies.config('7d')
+
+// set global cookie
+VueCookies.set('theme','default');
+VueCookies.set('hover-time','1s');
+Vue.use(VueCookies)
+
 // importar Bootstrap para Vue
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css'
@@ -25,7 +36,7 @@ Vue.config.productionTip = false
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 Vue.use(VueAxios, axios);
-axios.defaults.baseURL = 'http://c1fe4917.ngrok.io';
+axios.defaults.baseURL = 'http://127.0.0.1:9999';
 
 // importar componentes de Vue
 import Master from './layout/master.vue'
