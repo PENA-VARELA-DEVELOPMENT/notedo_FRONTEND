@@ -8,7 +8,7 @@
                 <label style="font-weight: bold; color: #1a9cd7">Información general</label>
                 <b-form @submit="onSubmit" @reset="onReset" v-if="show">
                     
-                    <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
+                    <b-form-group id="input-group-2" label="Nombre:" label-for="input-2">
                         <b-form-input
                         id="input-2"
                         v-model="form.name"
