@@ -1,13 +1,38 @@
 <template>
-  <!-- Form-->
-  <b-container>
-    <b-col style="display: flex; justify-content: center; align-items: center;">
-      <b-row>
-        <b-card id="shadow" style="margin-top:20%; border-radius: 1rem; horizontal-aligment:center">
-          <b-card-body title="Reestablecer contraseña">
-            <b-card-text>
-              <b-form>
-              <!-- Password -->
+    <b-container style="margin-top:5%;">
+    <b-row>
+        <b-col >
+            <b-card id="shadow" title="Perfil" style="border-color: #1a9cd7">
+                 
+                <label style="font-weight: bold; color: #1a9cd7">Información general</label>
+                <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+                    
+                    <b-form-group id="input-group-2" label="Nombre:" label-for="input-2">
+                        <b-form-input
+                        id="input-2"
+                        v-model="form.name"
+                        required
+                        placeholder="Maria Vasquez"
+                        ></b-form-input>
+                    </b-form-group>
+
+                    <b-form-group
+                        id="input-group-1"
+                        label="Correo electrónico:"
+                        label-for="input-1"
+                    >
+                        <b-form-input
+                        id="input-1"
+                        v-model="form.email"
+                        type="email"
+                        required
+                        placeholder="maria28@gmail.com"
+                        ></b-form-input>
+                    </b-form-group>
+                </b-form>  
+
+                <label style="font-weight: bold; color: #1a9cd7" >Cambiar contraseña</label>
+                <!-- Password -->
                 <b-form-group
                   id="input-group-3"
                   label="Contraseña:"
@@ -39,17 +64,11 @@
                   ></b-form-input>
                 </b-form-group>
 
-                <b-button type="submit" variant="primary" style="color: #ffffff; background-color:#1a9cd7;">Recuperar contraseña</b-button>
-              </b-form>
-            </b-card-text>
-            
-            <b-link href="#" style=" position: absolute; color: #1a9cd7;">Volver al inicio</b-link>
-          </b-card-body>
-             
-        </b-card> 
-      </b-row> 
-    </b-col>
-  </b-container>
+                <b-button type="submit" variant="primary" style="color: #ffffff; background-color:#1a9cd7;">Guardar cambios</b-button>
+            </b-card>
+        </b-col>
+    </b-row>
+</b-container>
 </template>
 
 <script>
@@ -59,9 +78,9 @@
         form: {
           email: '',
           name: '',
-          password: ''
+          
         },
-       
+        
         show: true
       }
     },
@@ -75,8 +94,7 @@
         // Reset our form values
         this.form.email = ''
         this.form.name = ''
-        this.form.password = ''
-        
+ 
         // Trick to reset/clear native browser form validation state
         this.show = false
         this.$nextTick(() => {

@@ -46,27 +46,18 @@
                       placeholder="***"
                     ></b-form-input>
                   </b-form-group>
-
-                  <b-button
-                    type="submit"
-                    variant="primary"
-                    style="color: #ffffff; background-color:#1a9cd7;"
-                    >Inicia sesión</b-button
-                  >
-                  <b-button
-                    type="reset"
-                    variant="primary"
-                    style="color: #ffffff; background-color:#1c5b78;"
-                    >Cancelar</b-button
-                  >
-                </b-form>
-              </b-card-text>
-            </b-card-body>
+                  <b-button type="submit" variant="primary" style="color: #ffffff; background-color:#1a9cd7;">Registrarse</b-button>
+                <b-button type="reset"  variant="primary" style="color: #ffffff; background-color:#1c5b78;" >Cancelar</b-button>
+              </b-form>
+            </b-card-text>
+            <b-link href="#" style=" position: absolute; color: #1a9cd7;">¿Olvidó su contraseña?</b-link>
+          </b-card-body>
           </b-card>
         </b-col>
       </b-row>
     </b-container>
   </div>
+
 </template>
 
 <script>
