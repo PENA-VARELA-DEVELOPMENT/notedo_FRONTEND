@@ -94,23 +94,32 @@ export default {
         }
       };
 
-      this.axios
-        .post("/login", this.form, config)
-        .then(response => {
+      this.axios.post("/login", this.form, config).then(
+        response => {
           if (response.status == 200) {
             router.push("/notes");
-
           }
-        })
-        .catch(response => {
-          this.$bvToast.toast(`Toast body content`, {
-              title: "error",
-              toaster: 'b-toaster-top-right',
+        },
+        error => {
+          if (error. response.status == 401) {
+            this.$bvToast.toast(`Ha ocurrido un error`, {
+              title: "Error",
+              toaster: "b-toaster-top-right",
+              variant: "danger",
               solid: true,
               appendToast: false
             });
-        });
-      alert(JSON.stringify(this.form));
+          } else if (error.response.status == 400) {
+            this.$bvToast.toast(error.response.data.message, {
+              title: "Error",
+              toaster: "b-toaster-top-right",
+              variant: "danger",
+              solid: true,
+              appendToast: false
+            });
+          }
+        }
+      );
     },
     onReset(evt) {
       evt.preventDefault();

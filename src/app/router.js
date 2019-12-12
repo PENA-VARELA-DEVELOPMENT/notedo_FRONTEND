@@ -7,7 +7,6 @@ import card from './components/note.vue';
 import newUser from './components/newUser.vue';
 import login from './components/login.vue';
 import listTodo from './components/list-todo.vue';
-import todoItem from './components/todo-item.vue';
 import forgotPass from './components/forgotPassword.vue';
 import resetPass from './components/resetPassword.vue';
 
@@ -16,7 +15,6 @@ Vue.component('notedo-nv', navVar);
 Vue.component('newUser', newUser);
 Vue.component('login', login);
 Vue.component('listTodo', listTodo);
-Vue.component('todo-item', todoItem);
 Vue.component('forgotPassword', forgotPass);
 Vue.component('resetPassword', resetPass);
 
@@ -42,6 +40,10 @@ export default new Router({
         {
             path: '/register',
             component: newUser
+        },
+        {
+            path: '/todo',
+            component: listTodo
         }
     ]
 })
