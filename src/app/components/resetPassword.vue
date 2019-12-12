@@ -1,9 +1,9 @@
 <template>
   <!-- Form-->
-  <b-container style=" max-width: 100%; max-height:100%; background: rgb(151,80,201); background: linear-gradient(0deg, rgba(151,80,201,1) 0%, rgba(124,180,206,1) 100%);">
+  <b-container>
     <b-col style="display: flex; justify-content: center; align-items: center;">
-      <b-row no-gutters>
-        <b-card class="overflow-hidden" style="margin:1rem; border-radius: 1rem; horizontal-aligment:center">
+      <b-row>
+        <b-card id="shadow" style="margin-top:20%; border-radius: 1rem; horizontal-aligment:center">
           <b-card-body title="Reestablecer contraseña">
             <b-card-text>
               <b-form>

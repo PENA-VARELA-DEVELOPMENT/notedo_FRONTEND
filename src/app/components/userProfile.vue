@@ -1,9 +1,8 @@
 <template>
-    <b-container style="margin-top:1rem;">
+    <b-container style="margin-top:5%;">
     <b-row>
         <b-col >
-            
-            <b-card title="Perfil" style="border-color: #1a9cd7">
+            <b-card id="shadow" title="Perfil" style="border-color: #1a9cd7">
                  
                 <label style="font-weight: bold; color: #1a9cd7">Información general</label>
                 <b-form @submit="onSubmit" @reset="onReset" v-if="show">
@@ -66,10 +65,7 @@
                 </b-form-group>
 
                 <b-button type="submit" variant="primary" style="color: #ffffff; background-color:#1a9cd7;">Guardar cambios</b-button>
-              
             </b-card>
-            
-      
         </b-col>
     </b-row>
 </b-container>
