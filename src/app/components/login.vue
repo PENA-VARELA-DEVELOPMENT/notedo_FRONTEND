@@ -44,7 +44,7 @@
                       placeholder="***"
                     ></b-form-input>
                   </b-form-group>
-                  <b-button type="submit" variant="primary" style="color: #ffffff; background-color:#1a9cd7;">Registrarse</b-button>
+                  <b-button type="submit" variant="primary" style="color: #ffffff; background-color:#1a9cd7;">Iniciar sesión</b-button>
                 <b-button type="reset"  variant="primary" style="color: #ffffff; background-color:#1c5b78;" >Cancelar</b-button>
               </b-form>
             </b-card-text>

@@ -157,7 +157,6 @@ export default {
           "Content-Type": "application/json"
         }
       };
-      alert(this.todo.body);
       
       this.axios.post("/todo", this.todo, config).then(response => {
         console.log(response.data.message + response.status);

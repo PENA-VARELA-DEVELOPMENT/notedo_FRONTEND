@@ -230,6 +230,9 @@ export default {
   created() {
     this.read();
   },
+  beforeUpdate(){
+    this.read();
+  },
   methods: {
     save() {
       const config = {
