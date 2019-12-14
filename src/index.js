@@ -1,9 +1,11 @@
 const express = require("express");
+const session = require("express-session");
 const router = require("./routes/index");
 const path = require("path");
 const bodyParser = require('body-parser')
 const morgan = require("morgan");
-const cors = require("cors");
+
+
 
 
 
@@ -14,7 +16,15 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(morgan('dev'));
-app.use(cors());
+
+app.use(
+    session({
+        secret: "unSecreto",
+        key: "Unallave",
+        resave: false,
+        saveUninitialized: false
+    })
+);
 
 // Static Files
 app.use(express.static(path.join(__dirname,"./public")));

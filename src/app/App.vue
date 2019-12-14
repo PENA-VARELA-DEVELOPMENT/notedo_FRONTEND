@@ -1,25 +1,6 @@
 <template>
   <div>
-    <notedo-nv> </notedo-nv>
-    <list-todo></list-todo>
-    <!--
-    <newUser></newUser>
-    <login> </login>
-    -->
-
-    <!-- <b-container>
-      <b-row>
-        <b-col>
-          <note-card> </note-card>
-        </b-col>
-        <b-col>
-          <note-card> </note-card>
-        </b-col>
-        <b-col>
-          <note-card> </note-card>
-        </b-col>
-      </b-row>
-    </b-container> -->
+    <login></login>
   </div>
 </template>
 
@@ -35,9 +16,9 @@ export default {
     },
     methods: {
         test(){
-          this.axios.get('/note')
-          .then(res => console.log(res.response))
-          .catch(e => console.log(e.response))  
+          // this.axios.get('/note')
+          // .then(res => console.log(res.response))
+          // .catch(e => console.log(e.response))  
         }
     }
 }
