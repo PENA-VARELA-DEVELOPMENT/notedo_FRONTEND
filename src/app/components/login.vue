@@ -48,7 +48,7 @@
                 <b-button type="reset"  variant="primary" style="color: #ffffff; background-color:#1c5b78;" >Cancelar</b-button>
               </b-form>
             </b-card-text>
-            <b-link href="#" style=" position: absolute; color: #1a9cd7;">¿Olvidó su contraseña?</b-link>
+            <b-link href="/#/forgotPass" style=" position: absolute; color: #1a9cd7;">¿Olvidó su contraseña?</b-link>
           </b-card-body>
           </b-card>
         </b-col>

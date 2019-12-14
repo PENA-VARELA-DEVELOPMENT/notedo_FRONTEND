@@ -22,7 +22,7 @@ Vue.component('resetPassword', resetPass);
 Vue.use(Router);
 
 
-
+// Rutas de Vue
 export default new Router({
     routes: [
         {
@@ -44,6 +44,14 @@ export default new Router({
         {
             path: '/todo',
             component: listTodo
+        },
+        {
+            path: '/forgotPass',
+            component: forgotPass
+        },
+        {
+            path: '/newPass',
+            component: resetPass
         }
     ]
 })
