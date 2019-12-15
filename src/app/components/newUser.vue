@@ -4,15 +4,13 @@
     <notedo-nv v-bind:rg="rg"> </notedo-nv>
 
     <b-container
-      style=" max-width: 100%; max-height:100%; background: rgb(151,80,201); background: linear-gradient(0deg, rgba(151,80,201,1) 0%, rgba(124,180,206,1) 100%);"
     >
       <b-col
         style="display: flex; justify-content: center; align-items: center;"
       >
         <b-row no-gutters>
           <b-card
-            class="overflow-hidden"
-            style="margin:1rem; border-radius: 1rem; horizontal-aligment:center"
+            id="shadow" style="margin-top:30%; border-radius: 1rem; horizontal-aligment:center: vertical-aligment: center;"
           >
             <b-card-body
               title="Regístrate aquí, y comieza a organizarte mejor!"
@@ -99,6 +97,8 @@
     </b-container>
   </div>
 </template>
+
+
 
 <script>
 import router from "../router";
