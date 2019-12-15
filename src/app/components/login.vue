@@ -3,15 +3,13 @@
   <div>
     <notedo-nv v-bind:rg="rg"> </notedo-nv>
     <b-container
-      style=" max-width: 100%; max-height:100%; background: rgb(151,80,201); background: linear-gradient(0deg, rgba(151,80,201,1) 0%, rgba(124,180,206,1) 100%);"
     >
       <b-row no-gutters>
         <b-col
-          style="display: flex; justify-content: center; align-items: center; padding-bottom:13.2%; padding-top:13.2%;"
+          style="display: flex; justify-content: center; align-items: center;"
         >
           <b-card
-            class="overflow-hidden"
-            style="margin:1rem; border-radius: 1rem; horizontal-aligment:center"
+            id="shadow" style="margin-top:20%; border-radius: 1rem; horizontal-aligment:center: vertical-aligment: center;"
           >
             <b-card-body title="Bienvenido(a) a notedo">
               <b-card-text>
@@ -46,28 +44,22 @@
                       placeholder="***"
                     ></b-form-input>
                   </b-form-group>
-
-                  <b-button
-                    type="submit"
-                    variant="primary"
-                    style="color: #ffffff; background-color:#1a9cd7;"
-                    >Inicia sesión</b-button
-                  >
-                  <b-button
-                    type="reset"
-                    variant="primary"
-                    style="color: #ffffff; background-color:#1c5b78;"
-                    >Cancelar</b-button
-                  >
-                </b-form>
-              </b-card-text>
-            </b-card-body>
+                  <b-button type="submit" variant="primary" style="color: #ffffff; background-color:#1a9cd7;">Iniciar sesión</b-button>
+                <b-button type="reset"  variant="primary" style="color: #ffffff; background-color:#1c5b78;" >Cancelar</b-button>
+              </b-form>
+            </b-card-text>
+            <b-link href="/#/forgotPass" style=" position: absolute; color: #1a9cd7;">¿Olvidó su contraseña?</b-link>
+          </b-card-body>
           </b-card>
         </b-col>
       </b-row>
     </b-container>
   </div>
+
 </template>
+
+
+
 
 <script>
 import qs from "query-string";

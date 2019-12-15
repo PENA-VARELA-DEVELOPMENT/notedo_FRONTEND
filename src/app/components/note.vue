@@ -239,7 +239,6 @@ export default {
         }
       };
       this.axios.post("/note", this.note, config).then(response => {
-        console.log(response.data.message + response.status);
         this.read();
       });
     },
@@ -252,7 +251,6 @@ export default {
       };
       this.axios.get("/note", config).then(response => {
         this.notes = response.data;
-        console.log(response.data);
       });
     },
     setSCard(note) {
@@ -284,7 +282,6 @@ export default {
       this.axios
         .delete(`/note/${this.selectedNote._id}`, config)
         .then(response => {
-          console.log(response.data);
         });
       this.read();
     },
@@ -298,8 +295,8 @@ export default {
       this.axios
         .put(`/note/${this.selectedNote._id}`, this.selectedNote, config)
         .then(response => {
-          console.log(response.data);
         });
+      this.read();
       this.read();
     }
   }

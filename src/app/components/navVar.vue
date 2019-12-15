@@ -20,7 +20,7 @@
           <template v-slot:button-content>
             <em>{{userName}}</em>
           </template>
-          <b-dropdown-item href="#">Perfil</b-dropdown-item>
+          <b-dropdown-item href="/#/profile">Perfil</b-dropdown-item>
           <b-dropdown-item @click="logOut">Cerrar sesión</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
@@ -49,7 +49,6 @@ export default {
         .get("/user", config)
         .then(response => {
           this.userName = response.data.user.name
-          console.log(response.data.user.name);
         });
     }
     

@@ -146,9 +146,6 @@ export default {
   created() {
     this.read();
   },
-  beforeUpdate(){
-    this.read();
-  },
   methods: {
     save() {
       const config = {
@@ -157,10 +154,8 @@ export default {
           "Content-Type": "application/json"
         }
       };
-      alert(this.todo.body);
       
       this.axios.post("/todo", this.todo, config).then(response => {
-        console.log(response.data.message + response.status);
         this.read();
       });
     },
@@ -198,7 +193,6 @@ export default {
       this.axios
         .delete(`/todo/${this.selectedTodo._id}`, config)
         .then(response => {
-          console.log(response.data);
         });
       this.read();
     },
@@ -220,8 +214,8 @@ export default {
       this.axios
         .put(`/todo/${this.selectedTodo._id}`, this.selectedTodo, config)
         .then(response => {
-          console.log(response.data);
         });
+      this.read();
       this.read();
     }
   }
