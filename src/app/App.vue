@@ -21,14 +21,9 @@ export default {
         }
     },
     created () {
-        this.test()
     },
     methods: {
-        test(){
-          // this.axios.get('/note')
-          // .then(res => console.log(res.response))
-          // .catch(e => console.log(e.response))  
-        }
+       
     }
 }
 </script>

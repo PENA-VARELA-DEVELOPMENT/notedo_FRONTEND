@@ -14,7 +14,7 @@
             <b-card-body v-if="!sended" title="¿Olvidaste tu contraseña?">
               <b-card-text>
                 <!-- Email -->
-                <b-form @submit="onSubmit" @reset="onReset" >
+                <b-form @submit="onSubmit" @reset="onReset">
                   <b-form-group
                     id="input-group-1"
                     label="Ingresa tu correo electrónico para poder reestablecerla:"
@@ -22,7 +22,7 @@
                   >
                     <b-form-input
                       id="input-1"
-                      v-model="form.email"
+                      v-model="user.email"
                       type="email"
                       required
                       placeholder="maria28@gmail.com"
@@ -46,16 +46,15 @@
 
             <b-card-body v-if="sended" title="Correo enviado">
               <b-card-text>
-                Se ha enviado un link a tu correo para que puedas
-                reestablecer tu contraseña, si no aparece en unos cuantos
-                minutos, revisa tu carpeta de spam o vuelve a intentarlo. 
-
-
+                Se ha enviado un link a tu correo para que puedas reestablecer
+                tu contraseña, si no aparece en unos cuantos minutos, revisa tu
+                carpeta de spam o vuelve a intentarlo.
               </b-card-text>
               <b-button
-                  variant="primary"
-                  style="color: #ffffff; background-color:#1a9cd7;"
-                  >Volver a iniciar sesión</b-button
+                href="/#/login"
+                variant="primary"
+                style="color: #ffffff; background-color:#1a9cd7;"
+                >Volver a iniciar sesión</b-button
               >
             </b-card-body>
           </b-card>
@@ -69,11 +68,10 @@
 export default {
   data() {
     return {
-      form: {
+      user: { 
         email: "",
-        name: "",
-        password: ""
-      },
+        clientHost: ""
+        },
       rg: true,
       sended: false
     };
@@ -81,15 +79,47 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
-      this.sended = true;
+      this.user.clientHost = location.host
+      const config = {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      this.axios.post("/resetPass", this.user, config).then(
+        response => {
+          if (response.status == 200) {
+            this.sended = true;
+          }
+        },
+        error => {
+          if (error.response.status == 400) {
+            this.$bvToast.toast(error.response.data.message, {
+              title: "Error",
+              toaster: "b-toaster-top-right",
+              variant: "danger",
+              solid: true,
+              appendToast: false
+            });
+          }
+
+          if (error.response.status == 500) {
+            this.$bvToast.toast("Ha ocurrido un error", {
+              title: "Error",
+              toaster: "b-toaster-top-right",
+              variant: "danger",
+              solid: true,
+              appendToast: false
+            });
+          }
+        }
+      );
     },
     onReset(evt) {
       evt.preventDefault();
       // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      this.form.password = "";
+      this.user.email = "";
+      this.user.clientHost = "";
       this.sended = false;
     }
   }
