@@ -330,6 +330,7 @@ export default {
         .delete(`/note/${this.selectedNote._id}`, config)
         .then(response => {
           if (response.status == 200) {
+            this.read();
             this.$bvToast.toast(response.data.message, {
               title: "Exito!",
               toaster: "b-toaster-top-right",
@@ -350,6 +351,7 @@ export default {
           }
         });
       this.read();
+      this.read();
     },
     edit() {
       const config = {
@@ -362,6 +364,7 @@ export default {
         .put(`/note/${this.selectedNote._id}`, this.selectedNote, config)
         .then(response => {
           if (response.status == 200) {
+            this.read();
             this.$bvToast.toast(response.data.message, {
               title: "Exito!",
               toaster: "b-toaster-top-right",
