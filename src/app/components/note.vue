@@ -109,7 +109,20 @@
         </template>
         <b-card-text>{{ notee.body }}</b-card-text>
         <template v-slot:footer>
-          <em>Ultima modificación {{ new Date(notee.lastModified) }}</em>
+          <em
+            >Ultima modificación: 
+            {{
+              new Date(notee.lastModified).toLocaleDateString("es-ES", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "numeric",
+                minute: "numeric",
+                second: "numeric"
+              })
+            }}</em
+          >
         </template>
       </b-card>
     </b-card-group>
