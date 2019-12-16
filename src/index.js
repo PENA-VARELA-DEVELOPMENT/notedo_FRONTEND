@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const morgan = require("morgan");
 
 
-
+require("dotenv").config({ path: "variables.env"});
 
 
 const app = express();
@@ -19,8 +19,8 @@ app.use(morgan('dev'));
 
 app.use(
     session({
-        secret: "unSecreto",
-        key: "Unallave",
+        secret: SECRET,
+        key: KEY,
         resave: false,
         saveUninitialized: false
     })
@@ -32,7 +32,11 @@ app.use(express.static(path.join(__dirname,"./public")));
 // Routes
 app.use(router())
 
+
+const host = "0.0.0.0";
+const port = process.env.PORT;
+
 // Server listenting 
-var server = app.listen(9888, function () {
-    console.log('Node server is running on port 9888..');
+app.listen(host, port, () => {
+    console.log('Node server is running');
 });
