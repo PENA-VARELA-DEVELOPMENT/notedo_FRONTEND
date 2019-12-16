@@ -17,7 +17,7 @@
                 <b-form @submit="onSubmit" @reset="onReset">
                   <b-form-group
                     id="input-group-1"
-                    label="Ingresa tu correo electrónico para poder reestablecerla:"
+                    label="Ingresa tu correo electrónico para poder restablecerla:"
                     label-for="input-1"
                   >
                     <b-form-input
@@ -33,7 +33,7 @@
                     type="submit"
                     variant="primary"
                     style="color: #ffffff; background-color:#1a9cd7;"
-                    >Reestablecer contraseña</b-button
+                    >Restablecer contraseña</b-button
                   >
                 </b-form>
               </b-card-text>

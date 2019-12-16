@@ -11,7 +11,7 @@
             id="shadow"
             style="margin-top:20%; border-radius: 1rem; horizontal-aligment:center"
           >
-            <b-card-body v-if="validToken" title="Reestablecer contraseña">
+            <b-card-body v-if="validToken" title="Restablecer contraseña">
               <b-card-text>
                 <b-form @submit="onSubmit" @reset="onReset">
                   <!-- Password -->
