@@ -206,6 +206,7 @@ export default {
         
       );
       this.read();
+      this.read();
     },
     read() {
       const config = {
@@ -260,6 +261,8 @@ export default {
           }
         }
       );
+      this.read();
+      this.read();
       this.read();
     },
     statusChanger(tod) {
