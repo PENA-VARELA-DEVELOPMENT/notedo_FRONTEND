@@ -3,7 +3,7 @@ const session = require("express-session");
 const router = require("./routes/index");
 const path = require("path");
 const bodyParser = require('body-parser')
-const morgan = require("morgan");
+
 
 
 require("dotenv").config({ path: "variables.env"});
@@ -15,7 +15,7 @@ const app = express();
 // Middlewares
 
 app.use(bodyParser.json());
-app.use(morgan('dev'));
+
 
 app.use(
     session({
