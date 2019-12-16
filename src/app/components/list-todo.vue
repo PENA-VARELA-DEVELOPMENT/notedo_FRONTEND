@@ -67,7 +67,9 @@
                     </b-dropdown>
                   </b-input-group-append>
                   <b-input-group-append>
-                    <b-button @click="save" variant="success">Agregar tarea</b-button>
+                    <b-button @click="save" variant="success"
+                      >Agregar tarea</b-button
+                    >
                   </b-input-group-append>
                 </b-input-group>
                 <br />
@@ -77,8 +79,8 @@
                   <b-col>
                     <b-list-group class="list-wrapper">
                       <b-list-group-item
-                      v-for="(todoo, index) in todos"
-                      :key="index"
+                        v-for="(todoo, index) in todos"
+                        :key="index"
                         button
                         class="d-flex justify-content-between align-items-center"
                         :variant="todoo.color"
@@ -86,15 +88,22 @@
                         <b-input-group class="mt-3 form-check">
                           <b-input-group-prepend is-text>
                             <input
-                              type="checkbox"                 
-                              v-on:click="setSCard(todoo); statusChanger(todoo); edit();"
+                              type="checkbox"
+                              v-on:click="
+                                setSCard(todoo);
+                                statusChanger(todoo);
+                                edit();
+                              "
                               :checked="todoo.status"
                               aria-label="Checkbox for following text input"
                             />
                           </b-input-group-prepend>
                           <template v-slot:append class="form-check-label">
                             <b-input-group-text
-                              v-on:click="setSCard(todoo); del();"
+                              v-on:click="
+                                setSCard(todoo);
+                                del();
+                              "
                               ><i><font-awesome-icon icon="times-circle"/></i
                             ></b-input-group-text>
                           </template>
@@ -103,7 +112,6 @@
                             v-on:keyup.enter="edit"
                             :value="todoo.body"
                             @input="onInputBody"
-
                           ></b-form-input>
                         </b-input-group>
                       </b-list-group-item>
@@ -119,8 +127,8 @@
   </div>
 </template>
 
-
 <script>
+import router from "../router";
 export default {
   data() {
     return {
@@ -143,6 +151,22 @@ export default {
       varTextColor: ""
     };
   },
+  beforeCreate() {
+    const config = {
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    this.axios.get("/user", config).then(
+      response => {},
+      error => {
+        if (error.response.status == 401) {
+          router.push("/login");
+        }
+      }
+    );
+  },
   created() {
     this.read();
   },
@@ -154,10 +178,34 @@ export default {
           "Content-Type": "application/json"
         }
       };
-      
-      this.axios.post("/todo", this.todo, config).then(response => {
-        this.read();
-      });
+
+      this.axios.post("/todo", this.todo, config).then(
+        response => {
+          if (response.status == 201) {
+            this.$bvToast.toast(response.data.message, {
+              title: "Exito!",
+              toaster: "b-toaster-top-right",
+              variant: "success",
+              solid: true,
+              appendToast: false
+            });
+          }
+          this.read();
+        },
+        error => {
+          if (error.response.status == 422) {
+            this.$bvToast.toast(error.response.data.error, {
+              title: "Error",
+              toaster: "b-toaster-top-right",
+              variant: "danger",
+              solid: true,
+              appendToast: false
+            });
+          }
+        }
+        
+      );
+      this.read();
     },
     read() {
       const config = {
@@ -168,19 +216,18 @@ export default {
       };
       this.axios.get("/todo", config).then(response => {
         this.todos = response.data;
+        console.log(response.data);
+        
       });
     },
     setSCard(todo) {
-      
       this.selectedTodo = todo;
-
     },
     setEditColors(bColor, tColor) {
       this.todo.color = bColor;
       this.todo.textColor = tColor;
     },
     onInputBody(e) {
-
       this.selectedTodo.body = e;
     },
     del() {
@@ -190,19 +237,38 @@ export default {
           "Content-Type": "application/json"
         }
       };
-      this.axios
-        .delete(`/todo/${this.selectedTodo._id}`, config)
-        .then(response => {
-        });
+      this.axios.delete(`/todo/${this.selectedTodo._id}`, config).then(
+        response => {
+          if (response.status == 200) {
+            this.$bvToast.toast(response.data.mensaje, {
+              title: "Exito!",
+              toaster: "b-toaster-top-right",
+              variant: "success",
+              solid: true,
+              appendToast: false
+            });
+          }
+        },
+        error => {
+          if (error.response.status == 422) {
+            this.$bvToast.toast(error.response.data.error, {
+              title: "Error",
+              toaster: "b-toaster-top-right",
+              variant: "danger",
+              solid: true,
+              appendToast: false
+            });
+          }
+        }
+      );
       this.read();
     },
-    statusChanger(tod){
-      
-        if (tod.status) {
-          this.selectedTodo.status = false
-        } else {
-          this.selectedTodo.status = true
-        }
+    statusChanger(tod) {
+      if (tod.status) {
+        this.selectedTodo.status = false;
+      } else {
+        this.selectedTodo.status = true;
+      }
     },
     edit() {
       const config = {
@@ -213,8 +279,31 @@ export default {
       };
       this.axios
         .put(`/todo/${this.selectedTodo._id}`, this.selectedTodo, config)
-        .then(response => {
-        });
+        .then(
+          response => {
+            if (response.status == 200) {
+              this.$bvToast.toast(response.data.message, {
+                title: "Exito!",
+                toaster: "b-toaster-top-right",
+                variant: "success",
+                solid: true,
+                appendToast: false
+              });
+            }
+          },
+          error => {
+            if (error.response.status == 422) {
+              this.$bvToast.toast(error.response.data.error, {
+                title: "Error",
+                toaster: "b-toaster-top-right",
+                variant: "danger",
+                solid: true,
+                appendToast: false
+              });
+            }
+          }
+        );
+      this.read();
       this.read();
       this.read();
     }
