@@ -108,6 +108,9 @@
           <h6 class="mb-0">{{ notee.title }}</h6>
         </template>
         <b-card-text>{{ notee.body }}</b-card-text>
+        <template v-slot:footer>
+          <em>Ultima modificación {{ new Date(notee.lastModified) }}</em>
+        </template>
       </b-card>
     </b-card-group>
 
@@ -205,6 +208,7 @@
 </template>
 
 <script>
+import router from "../router";
 export default {
   data() {
     return {
@@ -227,6 +231,22 @@ export default {
       varTextColor: ""
     };
   },
+  beforeCreate() {
+    const config = {
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    this.axios.get("/user", config).then(
+      response => {},
+      error => {
+        if (error.response.status == 401) {
+          router.push("/login");
+        }
+      }
+    );
+  },
   created() {
     this.read();
   },
@@ -239,7 +259,21 @@ export default {
         }
       };
       this.axios.post("/note", this.note, config).then(response => {
+        if (response.status == 201) {
+          this.bodyColor = "light",
+          this.varTextColor = ""
+        }
         this.read();
+      }, error => {
+        if (error.response.status == 422) {
+          this.$bvToast.toast(error.response.data.error, {
+              title: "Error",
+              toaster: "b-toaster-top-right",
+              variant: "danger",
+              solid: true,
+              appendToast: false
+            });
+        }
       });
     },
     read() {
@@ -282,6 +316,25 @@ export default {
       this.axios
         .delete(`/note/${this.selectedNote._id}`, config)
         .then(response => {
+          if (response.status == 200) {
+            this.$bvToast.toast(response.data.message, {
+              title: "Exito!",
+              toaster: "b-toaster-top-right",
+              variant: "success",
+              solid: true,
+              appendToast: false
+            });
+          }
+        }, error => {
+          if (error.response.status == 422) {
+            this.$bvToast.toast(error.response.data.error, {
+              title: "Error",
+              toaster: "b-toaster-top-right",
+              variant: "danger",
+              solid: true,
+              appendToast: false
+            });
+          }
         });
       this.read();
     },
@@ -295,6 +348,25 @@ export default {
       this.axios
         .put(`/note/${this.selectedNote._id}`, this.selectedNote, config)
         .then(response => {
+          if (response.status == 200) {
+            this.$bvToast.toast(response.data.message, {
+              title: "Exito!",
+              toaster: "b-toaster-top-right",
+              variant: "success",
+              solid: true,
+              appendToast: false
+            });
+          }
+        }, error => {
+          if (error.response.status == 422) {
+            this.$bvToast.toast(error.response.data.error, {
+              title: "Error",
+              toaster: "b-toaster-top-right",
+              variant: "danger",
+              solid: true,
+              appendToast: false
+            });
+          }
         });
       this.read();
       this.read();

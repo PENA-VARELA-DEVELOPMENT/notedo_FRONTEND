@@ -38,7 +38,7 @@ Vue.config.productionTip = false
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 Vue.use(VueAxios, axios);
-axios.defaults.baseURL = 'http://127.0.0.1:9999';
+axios.defaults.baseURL = 'https://notedo-rest-api.herokuapp.com';
 
 // importar componentes de Vue
 import Master from './layout/master.vue'

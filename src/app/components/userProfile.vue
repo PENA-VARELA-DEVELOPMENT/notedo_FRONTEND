@@ -98,6 +98,7 @@
 </template>
 
 <script>
+import router from "../router";
 export default {
   data() {
     return {
@@ -111,6 +112,22 @@ export default {
 
       show: true
     };
+  },
+  beforeCreate() {
+    const config = {
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    this.axios.get("/user", config).then(
+      response => {},
+      error => {
+        if (error.response.status == 401) {
+          router.push("/login");
+        }
+      }
+    );
   },
   created() {
     const config = {
