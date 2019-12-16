@@ -216,7 +216,6 @@ export default {
       };
       this.axios.get("/todo", config).then(response => {
         this.todos = response.data;
-        console.log(response.data);
         
       });
     },

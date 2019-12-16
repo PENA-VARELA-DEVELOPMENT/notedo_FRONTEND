@@ -143,7 +143,6 @@ export default {
   },
   methods: {
     onSubmit(evt) {
-      alert("Aaaaaaaaa");
       evt.preventDefault();
       const config = {
         withCredentials: true,
