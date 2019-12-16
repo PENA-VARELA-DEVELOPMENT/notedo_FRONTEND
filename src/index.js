@@ -19,8 +19,8 @@ app.use(morgan('dev'));
 
 app.use(
     session({
-        secret: SECRET,
-        key: KEY,
+        secret: process.env.SECRET,
+        key: process.env.KEY,
         resave: false,
         saveUninitialized: false
     })
