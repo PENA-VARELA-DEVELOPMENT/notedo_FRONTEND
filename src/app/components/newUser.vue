@@ -10,7 +10,7 @@
       >
         <b-row no-gutters>
           <b-card
-            id="shadow" style="margin-top:30%; border-radius: 1rem; horizontal-aligment:center: vertical-aligment: center;"
+            id="shadow" style="margin-top:20%; border-radius: 1rem; horizontal-aligment:center: vertical-aligment: center;"
           >
             <b-card-body
               title="Regístrate aquí, y comieza a organizarte mejor!"
