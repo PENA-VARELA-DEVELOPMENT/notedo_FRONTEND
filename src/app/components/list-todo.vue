@@ -286,6 +286,7 @@ export default {
         .then(
           response => {
             if (response.status == 200) {
+              this.read();
               this.$bvToast.toast(response.data.message, {
                 title: "Exito!",
                 toaster: "b-toaster-top-right",
