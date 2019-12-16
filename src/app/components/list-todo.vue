@@ -240,6 +240,7 @@ export default {
       this.axios.delete(`/todo/${this.selectedTodo._id}`, config).then(
         response => {
           if (response.status == 200) {
+            this.read();
             this.$bvToast.toast(response.data.mensaje, {
               title: "Exito!",
               toaster: "b-toaster-top-right",
@@ -247,6 +248,7 @@ export default {
               solid: true,
               appendToast: false
             });
+            
           }
         },
         error => {
