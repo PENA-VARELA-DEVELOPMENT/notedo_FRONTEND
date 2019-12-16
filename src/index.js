@@ -37,6 +37,6 @@ const host = "0.0.0.0";
 const port = process.env.PORT;
 
 // Server listenting 
-app.listen(host, port, () => {
+app.listen(port, host, () => {
     console.log('Node server is running');
 });
