@@ -9,6 +9,7 @@ import login from './components/login.vue';
 import listTodo from './components/list-todo.vue';
 import forgotPass from './components/forgotPassword.vue';
 import resetPass from './components/resetPassword.vue';
+import notFound from './components/404.vue'
 
 Vue.component('note-card', card);
 Vue.component('notedo-nv', navVar);
@@ -18,6 +19,8 @@ Vue.component('listTodo', listTodo);
 Vue.component('forgotPassword', forgotPass);
 Vue.component('resetPassword', resetPass);
 Vue.component('profile', userProfile);
+Vue.component('notFound', notFound);
+
 
 
 
@@ -58,6 +61,10 @@ export default new Router({
         {
             path: '/profile',
             component: userProfile
+        },
+        {
+            path: '*',
+            component: notFound
         }
     ]
 })

@@ -1,6 +1,15 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="dark">
-    <b-navbar-brand href="#">Notedo</b-navbar-brand>
+
+    <b-navbar-brand v-if="!rg" href="/#/notes">
+    <img src="/images/NV.png" class="d-inline-block align-top" alt="Kitten">
+    Note-do
+    </b-navbar-brand>
+
+    <b-navbar-brand v-if="rg" href="#">
+      <img src="/images/NV.png" class="d-inline-block align-top" alt="Kitten">
+    Note-do
+    </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

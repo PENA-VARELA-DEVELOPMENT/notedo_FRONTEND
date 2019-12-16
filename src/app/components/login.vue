@@ -93,7 +93,17 @@ export default {
           }
         },
         error => {
-          if (error. response.status == 401) {
+
+          if(error && !error.response){
+            this.$bvToast.toast(`Ha ocurrido un error`, {
+              title: "Error",
+              toaster: "b-toaster-top-right",
+              variant: "danger",
+              solid: true,
+              appendToast: false
+            });
+          }
+          if (error.response.status == 401) {
             this.$bvToast.toast(`Ha ocurrido un error`, {
               title: "Error",
               toaster: "b-toaster-top-right",
@@ -109,7 +119,10 @@ export default {
               solid: true,
               appendToast: false
             });
-          }
+          } 
+
+          
+          
         }
       );
     },
