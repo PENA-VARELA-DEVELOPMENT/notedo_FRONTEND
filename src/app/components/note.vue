@@ -24,7 +24,7 @@
               <b-form-textarea
                 id="textarea"
                 v-model="note.body"
-                placeholder="Enter something..."
+                placeholder="Escribe algo..."
                 rows="3"
                 max-rows="6"
               ></b-form-textarea></div
