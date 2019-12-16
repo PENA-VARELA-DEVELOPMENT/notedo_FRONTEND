@@ -45,7 +45,7 @@
                 id="input-group-5"
                 label="Contraseña actual:"
                 label-for="input-5"
-                description="ingresa tu contraseña actual"
+                description="Ingresa tu contraseña actual"
               >
                 <b-form-input
                   id="input-5"
